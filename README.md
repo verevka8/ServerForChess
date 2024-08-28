@@ -1,0 +1,1 @@
+### Сервер для [приложения](https://github.com/verevka8/ChessAndroidClient) на Spring Boot
