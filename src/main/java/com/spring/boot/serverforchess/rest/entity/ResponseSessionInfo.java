@@ -1,10 +1,10 @@
 package com.spring.boot.serverforchess.rest.entity;
 
-public class ResponseSessionCreation {
+public class ResponseSessionInfo {
     private String stateOfCreation;
     private String sessionId;
 
-    public ResponseSessionCreation(String stateOfCreation, String sessionId) {
+    public ResponseSessionInfo(String stateOfCreation, String sessionId) {
         this.stateOfCreation = stateOfCreation;
         this.sessionId = sessionId;
     }
@@ -21,8 +21,8 @@ public class ResponseSessionCreation {
         return sessionId;
     }
 
-    public void setSessionId(String sessionLink) {
-        this.sessionId = sessionLink;
+    public void setSessionId(String sessionId) {
+        this.sessionId = sessionId;
     }
 }
 

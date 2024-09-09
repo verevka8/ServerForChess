@@ -7,7 +7,6 @@ public class ChessMove {
 
     private int toCellX;
     private int toCellY;
-    private String toCellType;
 
     public int getFromCellX() {
         return fromCellX;
@@ -47,14 +46,6 @@ public class ChessMove {
 
     public void setToCellY(int toCellY) {
         this.toCellY = toCellY;
-    }
-
-    public String getToCellType() {
-        return toCellType;
-    }
-
-    public void setToCellType(String toCellType) {
-        this.toCellType = toCellType;
     }
 
     @Override

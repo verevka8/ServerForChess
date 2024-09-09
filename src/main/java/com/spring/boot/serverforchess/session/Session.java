@@ -13,7 +13,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 
 public class Session implements Runnable {
     private final BlockingQueue<ChessMove> messageQueue;
-    private final String sessionId;
+    public final String sessionId; 
     private final SimpMessagingTemplate messagingTemplate;
 
     public Session(String sessionId,SimpMessagingTemplate messagingTemplate) {
