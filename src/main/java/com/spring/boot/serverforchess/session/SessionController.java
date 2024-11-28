@@ -2,6 +2,7 @@ package com.spring.boot.serverforchess.session;
 
 import com.spring.boot.serverforchess.websocket.entity.ChessMove;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.messaging.Message;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Controller;
 
@@ -25,10 +26,16 @@ public class SessionController {
         sessionMap.put(sessionId,session);
         new Thread(session).start();
     }
-    public void receivingMessages(String sessionId, ChessMove move){
-        sessionMap.get(sessionId).receiveMessage(move);
+    public void receivingMessages(String sessionId, String userSessionId, ChessMove move){
+        sessionMap.get(sessionId).receiveMessage(new InformationOfChessMove(userSessionId,move));
     }
+    public void receivingMessages(String sessionId, String userSessionId, String message){
+        sessionMap.get(sessionId).registerUser(userSessionId);
+    }
+
     public Collection<Session> getSessions(){
         return sessionMap.values();
     }
 }
+
+

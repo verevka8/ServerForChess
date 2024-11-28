@@ -8,6 +8,16 @@ public class ChessMove {
     private int toCellX;
     private int toCellY;
 
+    public ChessMove(int fromCellX, int fromCellY, String fromCellType, int toCellX, int toCellY) {
+        this.fromCellX = fromCellX;
+        this.fromCellY = fromCellY;
+        this.fromCellType = fromCellType;
+        this.toCellX = toCellX;
+        this.toCellY = toCellY;
+    }
+
+    public ChessMove(){}
+
     public int getFromCellX() {
         return fromCellX;
     }

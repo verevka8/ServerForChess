@@ -27,11 +27,13 @@ public class ApiController {
     public ResponseSessionInfo createSession() {
         String sessionId = "792bc4d3-cfae5468" + s++; // TODO: написать генерацию уникального индекфикатора сессии
         sessionController.createNewSession(sessionId);
-        return new ResponseSessionInfo("Ok!",sessionId);
+        System.out.println("Создана новая сессия! " + sessionId);
+        return new ResponseSessionInfo(sessionId);
     }
 
     @GetMapping("/sessions")
     public Collection<Session> getSessions(){
         return sessionController.getSessions();
     }
+
 }
